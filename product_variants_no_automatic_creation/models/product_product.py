@@ -81,8 +81,9 @@ class ProductProduct(models.Model):
             for other_product in other_products:
                 if (len(other_product.attribute_value_ids) == cont and
                         other_product != product):
-                    raise exceptions.ValidationError(
-                        _("There's another product with the same attributes."))
+                    pass
+                    #raise exceptions.ValidationError(
+                    #    _("There's another product with the same attributes."))
 
     @api.constrains('product_tmpl_id', 'attribute_value_ids')
     def _check_configuration_validity(self):
